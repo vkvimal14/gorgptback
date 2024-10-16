@@ -10,7 +10,9 @@ import time
 # Setup Flask
 app = Flask(__name__)
 # Configure CORS with specific origins
-CORS(app, origins=['https://yourfrontend.domain.com'], supports_credentials=True)
+
+# Allow requests from localhost:3000 for development
+CORS(app, origins=['http://localhost:3000'], supports_credentials=True)
 app.secret_key = os.environ.get("SECRET_KEY")
 app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_HTTPONLY'] = True
