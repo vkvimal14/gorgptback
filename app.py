@@ -8,7 +8,7 @@ import os
 # Setup Flask
 app = Flask(__name__)
 CORS(app)
-app.secret_key = os.environ.get("SECRET_KEY", "your-secret-key")
+app.secret_key = os.environ.get("SECRET_KEY")
 
 # Gemini API configuration
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
@@ -16,7 +16,7 @@ genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 # Google OAuth configuration
 GOOGLE_CLIENT_ID = os.environ["GOOGLE_CLIENT_ID"]
 GOOGLE_CLIENT_SECRET = os.environ["GOOGLE_CLIENT_SECRET"]
-REDIRECT_URI = "https://your-backend-url/callback"
+REDIRECT_URI = "https://100.20.92.101/callback"
 
 flow = Flow.from_client_config(
     {
