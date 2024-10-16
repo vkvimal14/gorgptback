@@ -16,7 +16,7 @@ genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 # Google OAuth configuration
 GOOGLE_CLIENT_ID = os.environ["GOOGLE_CLIENT_ID"]
 GOOGLE_CLIENT_SECRET = os.environ["GOOGLE_CLIENT_SECRET"]
-REDIRECT_URI = "https://100.20.92.101/callback"
+REDIRECT_URI = "https://gorgptback.onrender.com/callback"
 
 flow = Flow.from_client_config(
     {
