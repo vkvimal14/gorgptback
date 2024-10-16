@@ -86,9 +86,11 @@ def login():
         authorization_url, state = flow.authorization_url(
             prompt="consent",
             access_type="offline",
-            include_granted_scopes="true"
+            include_granted_scopes="true",
+            redirect_uri=REDIRECT_URI  # Make sure to include the redirect_uri
         )
         session["state"] = state
+        app.logger.info(f"Authorization URL: {authorization_url}")
         return jsonify({"auth_url": authorization_url})
     except Exception as e:
         app.logger.error(f"Login error: {str(e)}")
