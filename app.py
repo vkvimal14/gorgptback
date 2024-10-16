@@ -83,11 +83,7 @@ def before_request():
 @app.route("/login")
 def login():
     try:
-        authorization_url, state = flow.authorization_url(
-            prompt="consent",
-            access_type="offline",
-            include_granted_scopes="true"
-        )
+        authorization_url, state = flow.authorization_url()
         session["state"] = state
         app.logger.info(f"Authorization URL: {authorization_url}")
         return jsonify({"auth_url": authorization_url})
