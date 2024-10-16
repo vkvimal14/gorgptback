@@ -35,7 +35,6 @@ flow = Flow.from_client_config(
 @app.route("/login")
 def login():
     authorization_url, state = flow.authorization_url(
-        redirect_uri=REDIRECT_URI,  # Explicitly set the redirect URI
         prompt="consent",           # Ensure Google prompts for consent
         access_type="offline",
         include_granted_scopes="true"
