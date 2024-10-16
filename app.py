@@ -60,5 +60,9 @@ def chat():
 
     return jsonify({"text": response.text})
 
+@app.route('/')
+def home():
+    return "Hello, Render is Live!"
+
 if __name__ == "__main__":
     app.run(debug=True)
